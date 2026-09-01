@@ -45,6 +45,9 @@ pids
 *.seed
 *.pid.lock
 *.bak
+.jobs.json
+node_modules/
+package-lock.json
 
 # Coverage directory used by tools like istanbul
 coverage/

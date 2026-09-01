@@ -1,0 +1,30 @@
+/* Keyframes and responsive layout */
+
+@keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { from { opacity: .55; } to { opacity: 1; } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(.95) translateY(-4px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+
+/* Panel stagger */
+.panel { animation: fadeUp .4s ease; }
+.source-card { animation-delay: .05s; }
+#media { animation-delay: .1s; }
+.options-card { animation-delay: .15s; }
+
+/* Mobile */
+@media (max-width: 700px) {
+  .welcome { flex-direction: column; }
+  .hero-stat { display: none; }
+  .workspace { grid-template-columns: 1fr; }
+  .two { grid-template-columns: 1fr; }
+  .media-actions { gap: 6px; }
+  .toggle-formats { font-size: 9px; padding: 7px 8px; }
+  .format-detail-grid { gap: 8px; }
+  .format-details { font-size: 9px; }
+  .format-menu { max-height: 250px; }
+  .advanced-header { margin-top: 14px; }
+  .advanced-header small { font-size: 9px; }
+  .media-title { min-height: 52px; }
+  .empty-format td { padding: 20px 10px; }
+}

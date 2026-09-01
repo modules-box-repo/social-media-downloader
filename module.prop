@@ -1,0 +1,10 @@
+id=youtube-downloader
+name=YouTube Downloader
+icon=icon.jpg
+description=Download YouTube videos locally via yt-dlp in various qualities and formats.
+author=YasserNull
+version=v1.0.0
+versionCode=1
+repository=https://github.com/null-box-repo/youtube-downloader
+install=setup.sh
+permission=default
