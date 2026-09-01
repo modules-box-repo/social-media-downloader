@@ -8,6 +8,6 @@ Download YouTube videos locally via `yt-dlp` in various qualities and formats.
 </p>
 
 <p align="center">
-  <img src="https://github.com/null-box-repo/youtube-downloader/blob/main/docs/images/screenshot1.jpg" width="50%">
-  <img src="https://github.com/null-box-repo/youtube-downloader/blob/main/docs/images/screenshot2.jpg" width="50%">
+  <img src="https://github.com/null-box-repo/youtube-downloader/blob/main/docs/images/screenshot1.jpg" width="45%">
+  <img src="https://github.com/null-box-repo/youtube-downloader/blob/main/docs/images/screenshot2.jpg" width="45%">
 </p>
