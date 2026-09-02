@@ -1,5 +1,5 @@
 {
-  "name": "youtube-downloader",
+  "name": "social-media-downloader",
   "version": "1.0.0",
   "scripts": {
     "start": "node server.js"

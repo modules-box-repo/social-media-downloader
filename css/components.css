@@ -232,8 +232,8 @@ tr.selected { background: var(--red-soft); }
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: -4px;
-  margin-bottom: 14px;
+  margin-top: 8px;
+  margin-bottom: 0;
   padding: 12px;
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -403,6 +403,75 @@ tr.selected { background: var(--red-soft); }
 
 /* Audio Fields */
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+/* No Audio Badge */
+.no-audio-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  background: var(--red-soft);
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 800;
+  vertical-align: middle;
+  margin-left: 4px;
+  flex-shrink: 0;
+}
+
+/* Mute / Audio Merge Checkboxes */
+.mute-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.mute-check input[type=checkbox] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--surface2);
+  vertical-align: middle;
+  position: relative;
+  flex: 0 0 16px;
+  transition: background .2s ease, border-color .2s ease;
+}
+
+.mute-check input[type=checkbox]:checked {
+  border-color: var(--red);
+  background: var(--red);
+}
+
+.mute-check input[type=checkbox]:checked:after {
+  content: "✓";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.merge-hint {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.audio-format-field { margin-top: 0; }
 
 /* Download Button */
 .download {

@@ -27,19 +27,3 @@ function setupSimplePicker(inputId, triggerId, menuId, options) {
     }
   );
 }
-
-setupSimplePicker("audioFormat", "audioFormatTrigger", "audioFormatMenu", [
-  { value: "mp3", label: "MP3", note: "Universal audio format" },
-  { value: "m4a", label: "M4A", note: "AAC audio, compact size" },
-  { value: "opus", label: "OPUS", note: "Efficient modern codec" },
-  { value: "wav", label: "WAV", note: "Uncompressed audio" },
-  { value: "flac", label: "FLAC", note: "Lossless audio" }
-]);
-
-setupSimplePicker("audioQuality", "audioQualityTrigger", "audioQualityMenu", [
-  { value: "320K", label: "320K", note: "Highest quality" },
-  { value: "256K", label: "256K", note: "Very high quality" },
-  { value: "192K", label: "192K", note: "Balanced quality" },
-  { value: "128K", label: "128K", note: "Smaller file" },
-  { value: "96K", label: "96K", note: "Smallest file" }
-]);

@@ -13,12 +13,51 @@ document.querySelectorAll(".mode").forEach(button =>
     );
     $("#audio-fields").classList.toggle("hidden", state.mode !== "audio");
     $("#formatPicker").classList.toggle("hidden", state.mode === "audio");
-    $("#formatDetails").classList.add("hidden");
+
+    if (state.mode === "audio") {
+      $("#muteSection").classList.add("hidden");
+      $("#audioMergeSection").classList.add("hidden");
+      $("#formatDetails").classList.add("hidden");
+      renderAudioModePicker();
+    } else {
+      const selectedId = $("#format").value;
+      const format = selectedId ? state.info?.formats.find(f => f.formatId === selectedId) : null;
+      if (format) {
+        $("#formatDetails").classList.remove("hidden");
+        const hasAudio = format.hasAudio;
+        $("#muteSection").classList.toggle("hidden", !hasAudio);
+        $("#audioMergeSection").classList.toggle("hidden", hasAudio);
+        if (!hasAudio && $("#audioMergeToggle").checked) {
+          $(".audio-format-field").classList.remove("hidden");
+        }
+      } else {
+        $("#muteSection").classList.remove("hidden");
+        $("#audioMergeSection").classList.add("hidden");
+        $("#formatDetails").classList.add("hidden");
+      }
+    }
   }
 );
 
 $("#formatTrigger").onclick = () => {
   $("#formatMenu").classList.toggle("hidden");
+};
+
+$("#audioFormatTrigger").onclick = () => {
+  $("#audioFormatMenu").classList.toggle("hidden");
+};
+
+$("#muteToggle").onchange = () => {
+  state.mute = $("#muteToggle").checked;
+};
+
+$("#audioMergeToggle").onchange = () => {
+  const enabled = $("#audioMergeToggle").checked;
+  $(".audio-format-field").classList.toggle("hidden", !enabled);
+};
+
+$("#audioMergeTrigger").onclick = () => {
+  $("#audioMergeMenu").classList.toggle("hidden");
 };
 
 $("#toggleFormats").onclick = () => {
@@ -56,9 +95,10 @@ $("#download").onclick = async () => {
     const data = {
       url: $("#url").value,
       mode: state.mode,
-      formatId: $("#format").value || undefined,
-      audioFormat: $("#audioFormat").value,
-      audioQuality: $("#audioQuality").value,
+      formatId: state.mode === "video" ? ($("#format").value || undefined) : ($("#audioFormatId").value || undefined),
+      mute: state.mute,
+      audioMerge: $("#audioMergeToggle").checked,
+      audioMergeFormat: $("#audioMergeFormat").value || undefined,
       subtitles: $("#subs").value.split(",").map(item => item.trim()).filter(Boolean),
       embedMetadata: $("#metadata").checked,
       embedThumbnail: $("#thumbnail").checked,

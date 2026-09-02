@@ -39,7 +39,7 @@ else
     apk add yt-dlp && echo -e "${GREEN}[5/7] yt-dlp installed successfully${NC}"
 fi
 
-echo -e "${BLUE}[6/7] Checking deno (JS runtime for YouTube)...${NC}"
+echo -e "${BLUE}[6/7] Checking deno (JS runtime for social media)...${NC}"
 if command -v deno &> /dev/null; then
     echo -e "${GREEN}[6/7] deno is already installed${NC}"
 else

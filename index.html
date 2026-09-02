@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101010">
-  <title>YouTube Downloader</title>
+  <title>Social Media Downloader</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
     <header class="topbar">
       <a class="brand" href="#top">
         <span class="brand-icon">↓</span>
-        <span>YouTube <span>Downloader</span></span>
+        <span>Social Media <span>Downloader</span></span>
       </a>
       <div class="top-actions">
         <button id="theme" class="icon" aria-label="Toggle theme">☼</button>
@@ -105,22 +105,31 @@
               <button id="formatTrigger" type="button" class="format-trigger">Best quality <span>⌄</span></button>
               <div id="formatMenu" class="format-menu hidden"></div>
             </div>
+            <div id="formatDetails" class="format-details hidden"></div>
           </label>
-          <div id="formatDetails" class="format-details hidden"></div>
-          <div id="audio-fields" class="two hidden">
+          <div id="muteSection">
+            <label class="mute-check"><input id="muteToggle" type="checkbox"> Mute audio</label>
+          </div>
+          <div id="audioMergeSection" class="hidden">
+            <label class="mute-check"><input id="audioMergeToggle" type="checkbox" checked> Audio</label>
+            <small class="merge-hint">This format has no audio. Keep this enabled to download and merge an audio track.</small>
+            <label class="field audio-format-field hidden">AUDIO FORMAT
+              <div id="audioMergePicker" class="format-picker">
+                <input id="audioMergeFormat" type="hidden" value="">
+                <button id="audioMergeTrigger" type="button" class="format-trigger">Best audio <span>⌄</span></button>
+                <div id="audioMergeMenu" class="format-menu hidden"></div>
+              </div>
+              <div id="audioFormatDetails" class="format-details hidden"></div>
+            </label>
+          </div>
+          <div id="audio-fields" class="hidden">
             <label class="field">AUDIO FORMAT
-              <div class="format-picker">
-                <input id="audioFormat" type="hidden" value="mp3">
-                <button id="audioFormatTrigger" type="button" class="format-trigger">MP3 <span>⌄</span></button>
+              <div id="audioModePicker" class="format-picker">
+                <input id="audioFormatId" type="hidden" value="">
+                <button id="audioFormatTrigger" type="button" class="format-trigger">Best audio <span>⌄</span></button>
                 <div id="audioFormatMenu" class="format-menu hidden"></div>
               </div>
-            </label>
-            <label class="field">QUALITY
-              <div class="format-picker">
-                <input id="audioQuality" type="hidden" value="192K">
-                <button id="audioQualityTrigger" type="button" class="format-trigger">192K <span>⌄</span></button>
-                <div id="audioQualityMenu" class="format-menu hidden"></div>
-              </div>
+              <div id="audioModeDetails" class="format-details hidden"></div>
             </label>
           </div>
           <div class="advanced-header">

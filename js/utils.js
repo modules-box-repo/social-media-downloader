@@ -6,7 +6,8 @@ const state = {
   mode: "video",
   info: null,
   formatsVisible: false,
-  pickerOpen: null
+  pickerOpen: null,
+  mute: false
 };
 
 const api = async (url, options = {}) => {

@@ -1,4 +1,4 @@
-// YouTube Downloader - Express server
+// Social Media Downloader - Express server
 
 const express = require("express");
 const path = require("node:path");
