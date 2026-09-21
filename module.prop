@@ -5,6 +5,6 @@ description=Download videos from social media platforms locally via yt-dlp in va
 author=YasserNull
 version=v1.0.0
 versionCode=1
-repository=https://github.com/null-box-repo/social-media-downloader
+repository=https://github.com/modules-box-repo/social-media-downloader
 install=setup.sh
 permission=default
